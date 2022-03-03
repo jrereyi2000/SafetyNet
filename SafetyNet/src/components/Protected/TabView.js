@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Image, Text} from 'react-native';
-import {colors, getStyle} from '../../css/Styles';
+import {getStyle} from '../../css/Styles';
 
 const TabView = ({focused, focusedIcon, notFocusedIcon, text}) => {
   return (
     <View
       style={getStyle(
-        'width-75 height-50 justify-content-flex-end align-items-center',
+          'width-75 height-50 justify-content-flex-end align-items-center',
       )}>
       <Image
         style={getStyle('margin-bottom-6')}
@@ -15,8 +15,9 @@ const TabView = ({focused, focusedIcon, notFocusedIcon, text}) => {
         resizeMode={'contain'}
       />
       <Text
-        style={getStyle('font-size-12', {
-          color: focused ? colors.vipTangerine : colors.grey100,
+        style={getStyle('font-size-12 text-black', {
+          opacity: focused ? 1 : 0.6,
+          fontFamily: focused ? 'MessinaSans-Bold' : 'MessinaSans-Regular',
         })}>
         {text}
       </Text>

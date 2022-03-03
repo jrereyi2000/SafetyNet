@@ -12,10 +12,9 @@ import TabView from './src/components/Protected/TabView';
 import AppContext from './src/AppContext';
 //  import Geolocation from '@react-native-community/geolocation';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {getStyle} from './src/css/Styles';
-import {StatusBar, View, Text} from 'react-native';
+import {colors, getStyle} from './src/css/Styles';
+import {StatusBar, View, Text, Dimensions, Pressable, Image} from 'react-native';
 import * as Keychain from 'react-native-keychain';
-import {Dimensions, Pressable, Image} from 'react-native';
 import {MMKV} from 'react-native-mmkv';
 //  import Settings from './src/components/Settings';
 import * as splashScreen from 'react-native-splash-screen';
@@ -36,7 +35,7 @@ import {
 
 const Stack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
-const Wallet = createMaterialTopTabNavigator();
+const Request = createMaterialTopTabNavigator();
 const Payment = createStackNavigator();
 
 const checkIfFirstLaunch = () => {
@@ -235,11 +234,11 @@ const App = () => {
 
 const RequestScreen = ({navigation}) => {
   // const appState = useContext(AppContext);
-  // const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false);
 
   return (
     <View
-      style={getStyle('height-100p width-100p bgNavy1000', {
+      style={getStyle('height-100p width-100p white', {
         paddingTop: hasHomeButton() ? '4%' : 0,
       })}>
       {/* <Settings
@@ -248,40 +247,36 @@ const RequestScreen = ({navigation}) => {
         navigation={navigation}
       /> */}
       <View
-        style={getStyle('margin-top-26p width-100p', {
+        style={getStyle('margin-top-26p flex-direction-row justify-content-space-between width-100p', {
           marginTop: hasHomeButton() ? '7%' : '20%',
         })}>
-        <View style={getStyle('width-100p align-items-flex-end')}>
-          <Pressable
-            style={getStyle('padding-right-6p align-items-flex-end')}
-            onPress={() => setModal(true)}>
-            {/* <Image
-              style={getStyle('justify-content-center')}
-              source={require('./res/images/settings.png')}
-              resizeMethod="resize"
-              resizeMode="contain"
-            /> */}
-          </Pressable>
-        </View>
-        <Text style={getStyle('text-white padding-left-6p font-size-28')}>
-           My Wallet
+        <Text style={getStyle('text-black messina-sans-bold padding-left-6p font-size-28')}>
+           My Requests
         </Text>
+        <Pressable
+          style={getStyle('padding-right-6p justify-content-center align-items-flex-end')}
+          onPress={() => setModal(true)}>
+          <Image
+            source={require('./res/images/helpIcon.png')}
+            resizeMethod="resize"
+            resizeMode="contain"
+          />
+        </Pressable>
       </View>
-      <Wallet.Navigator
-        tabBarOptions={{
-          style: [getStyle('height-40 bgNavy1000')],
-          activeTintColor: '#FF8264',
-          inactiveTintColor: '#949494',
-          tabStyle: getStyle(
-              'align-items-flex-start margin-left-15 margin-right-15',
-          ),
-          indicatorContainerStyle: getStyle('width-100p'),
-          indicatorStyle: getStyle('width-38p margin-left-28 tangerine'),
+      <Request.Navigator
+        screenOptions={{
+          tabBarStyle: getStyle('height-40'),
+          tabBarActiveTintColor: colors.black,
+          tabBarInactiveTintColor: '#999999',
+          tabBarLabelStyle: getStyle('font-size-16 messina-sans-regular', {textTransform: 'capitalize'}),
+          tabBarItemStyle: getStyle('align-items-flex-start margin-left-15 margin-right-15'),
+          tabBarIndicatorContainerStyle: getStyle('width-100p height-4 margin-top-36', {backgroundColor: '#6797F7'}),
+          tabBarIndicatorStyle: getStyle('width-38p margin-left-28 tangerine height-4', {backgroundColor: '#1426CA'}),
         }}
         initialRouteName="Sent">
-        <Wallet.Screen name="Sent" component={SentRequestsScreen} />
-        <Wallet.Screen name="Inbox" component={RequestInboxScreen} />
-      </Wallet.Navigator>
+        <Request.Screen name="Sent" component={SentRequestsScreen} />
+        <Request.Screen name="Inbox" component={RequestInboxScreen} />
+      </Request.Navigator>
     </View>
   );
 };
@@ -308,7 +303,7 @@ const ProtectedScreen = () => {
         tabBarShowLabel: false,
         tabBarShowIcon: true,
         tabBarIconStyle: getStyle('width-75 height-50'),
-        tabBarStyle: getStyle('height-10p navy900'),
+        tabBarStyle: getStyle('height-10p'),
       }}
       initialRouteName="Requests"
       tabBarPosition="bottom">

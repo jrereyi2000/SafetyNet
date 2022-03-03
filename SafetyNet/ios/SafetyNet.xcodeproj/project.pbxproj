@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SafetyNetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SafetyNetTests.m */; };
+		12F03DCBF4014D3F897BB49B /* MessinaSans-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D02A5DEA4153477585489099 /* MessinaSans-SemiBold.otf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1CFE18ADD314B7CA4B989604 /* libPods-SafetyNet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D52BAE6055C388D723ED88 /* libPods-SafetyNet.a */; };
+		42998BB8072A41CC8595161F /* MessinaSans-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F9F471BF6194E608904802C /* MessinaSans-BlackItalic.otf */; };
+		560F984228A3428EBAACD13D /* MessinaSans-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A54BFF8DB1834BF49DF562F3 /* MessinaSans-BoldItalic.otf */; };
+		6517F196A0F9434CA5A19247 /* MessinaSans-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30AB451FE1844A0A8F002446 /* MessinaSans-BookItalic.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		84AD04C1E9DD46DD93DA0315 /* MessinaSans-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7C0F95A65EE54407A12BD9D0 /* MessinaSans-RegularItalic.otf */; };
+		8BF9AECA10134C7497291E9B /* MessinaSans-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 580BBF7A8F50481EAB13A744 /* MessinaSans-SemiBoldItalic.otf */; };
+		AC85890C1F2B44498133A71F /* MessinaSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C469AA90503A4E638101E5AE /* MessinaSans-Bold.otf */; };
+		CE6FE94626FA4AFCA2A89967 /* MessinaSans-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8491A4199E4A4EE1A1B9D455 /* MessinaSans-LightItalic.otf */; };
+		E6F99AC320A04CC2A2CD70FA /* MessinaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 80671ED722B34EEEA1565EEA /* MessinaSans-Regular.otf */; };
+		E8541C14B8174A5A91529AD1 /* MessinaSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 68F43FEED7D641E0B2954E25 /* MessinaSans-Black.otf */; };
 		F68616AC33A311E6F044A2BE /* libPods-SafetyNet-SafetyNetTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B527E857BE09BBD3E8220A1 /* libPods-SafetyNet-SafetyNetTests.a */; };
+		FC733BCF375E4937B0E01D96 /* MessinaSans-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20BA65E851D8485EA6819D98 /* MessinaSans-Book.otf */; };
+		FEB89B80BC034CAF91969A1A /* MessinaSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E323B4899314ACAB12867C8 /* MessinaSans-Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +50,22 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SafetyNet/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SafetyNet/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SafetyNet/main.m; sourceTree = "<group>"; };
+		1F9F471BF6194E608904802C /* MessinaSans-BlackItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-BlackItalic.otf"; path = "../res/fonts/MessinaSans-BlackItalic.otf"; sourceTree = "<group>"; };
+		20BA65E851D8485EA6819D98 /* MessinaSans-Book.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-Book.otf"; path = "../res/fonts/MessinaSans-Book.otf"; sourceTree = "<group>"; };
 		2A188F862384E8505350C392 /* Pods-SafetyNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafetyNet.release.xcconfig"; path = "Target Support Files/Pods-SafetyNet/Pods-SafetyNet.release.xcconfig"; sourceTree = "<group>"; };
+		30AB451FE1844A0A8F002446 /* MessinaSans-BookItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-BookItalic.otf"; path = "../res/fonts/MessinaSans-BookItalic.otf"; sourceTree = "<group>"; };
+		580BBF7A8F50481EAB13A744 /* MessinaSans-SemiBoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-SemiBoldItalic.otf"; path = "../res/fonts/MessinaSans-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		5E323B4899314ACAB12867C8 /* MessinaSans-Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-Light.otf"; path = "../res/fonts/MessinaSans-Light.otf"; sourceTree = "<group>"; };
+		68F43FEED7D641E0B2954E25 /* MessinaSans-Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-Black.otf"; path = "../res/fonts/MessinaSans-Black.otf"; sourceTree = "<group>"; };
+		7C0F95A65EE54407A12BD9D0 /* MessinaSans-RegularItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-RegularItalic.otf"; path = "../res/fonts/MessinaSans-RegularItalic.otf"; sourceTree = "<group>"; };
+		80671ED722B34EEEA1565EEA /* MessinaSans-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-Regular.otf"; path = "../res/fonts/MessinaSans-Regular.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SafetyNet/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8491A4199E4A4EE1A1B9D455 /* MessinaSans-LightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-LightItalic.otf"; path = "../res/fonts/MessinaSans-LightItalic.otf"; sourceTree = "<group>"; };
 		9858D892BE522F21744F111F /* Pods-SafetyNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafetyNet.debug.xcconfig"; path = "Target Support Files/Pods-SafetyNet/Pods-SafetyNet.debug.xcconfig"; sourceTree = "<group>"; };
+		A54BFF8DB1834BF49DF562F3 /* MessinaSans-BoldItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-BoldItalic.otf"; path = "../res/fonts/MessinaSans-BoldItalic.otf"; sourceTree = "<group>"; };
 		AB7B6E4F6DD60462480527BB /* Pods-SafetyNet-SafetyNetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafetyNet-SafetyNetTests.debug.xcconfig"; path = "Target Support Files/Pods-SafetyNet-SafetyNetTests/Pods-SafetyNet-SafetyNetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C469AA90503A4E638101E5AE /* MessinaSans-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-Bold.otf"; path = "../res/fonts/MessinaSans-Bold.otf"; sourceTree = "<group>"; };
+		D02A5DEA4153477585489099 /* MessinaSans-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "MessinaSans-SemiBold.otf"; path = "../res/fonts/MessinaSans-SemiBold.otf"; sourceTree = "<group>"; };
 		EC3516EE3415ED679E8ACB24 /* Pods-SafetyNet-SafetyNetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafetyNet-SafetyNetTests.release.xcconfig"; path = "Target Support Files/Pods-SafetyNet-SafetyNetTests/Pods-SafetyNet-SafetyNetTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -114,7 +138,6 @@
 				AB7B6E4F6DD60462480527BB /* Pods-SafetyNet-SafetyNetTests.debug.xcconfig */,
 				EC3516EE3415ED679E8ACB24 /* Pods-SafetyNet-SafetyNetTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,6 +157,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				7B687D045A4B47D54048122D /* Pods */,
+				A8CF2195803D4304BCAFDA38 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +171,25 @@
 				00E356EE1AD99517003FC87E /* SafetyNetTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A8CF2195803D4304BCAFDA38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				68F43FEED7D641E0B2954E25 /* MessinaSans-Black.otf */,
+				1F9F471BF6194E608904802C /* MessinaSans-BlackItalic.otf */,
+				C469AA90503A4E638101E5AE /* MessinaSans-Bold.otf */,
+				A54BFF8DB1834BF49DF562F3 /* MessinaSans-BoldItalic.otf */,
+				20BA65E851D8485EA6819D98 /* MessinaSans-Book.otf */,
+				30AB451FE1844A0A8F002446 /* MessinaSans-BookItalic.otf */,
+				5E323B4899314ACAB12867C8 /* MessinaSans-Light.otf */,
+				8491A4199E4A4EE1A1B9D455 /* MessinaSans-LightItalic.otf */,
+				80671ED722B34EEEA1565EEA /* MessinaSans-Regular.otf */,
+				7C0F95A65EE54407A12BD9D0 /* MessinaSans-RegularItalic.otf */,
+				D02A5DEA4153477585489099 /* MessinaSans-SemiBold.otf */,
+				580BBF7A8F50481EAB13A744 /* MessinaSans-SemiBoldItalic.otf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +288,18 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E8541C14B8174A5A91529AD1 /* MessinaSans-Black.otf in Resources */,
+				42998BB8072A41CC8595161F /* MessinaSans-BlackItalic.otf in Resources */,
+				AC85890C1F2B44498133A71F /* MessinaSans-Bold.otf in Resources */,
+				560F984228A3428EBAACD13D /* MessinaSans-BoldItalic.otf in Resources */,
+				FC733BCF375E4937B0E01D96 /* MessinaSans-Book.otf in Resources */,
+				6517F196A0F9434CA5A19247 /* MessinaSans-BookItalic.otf in Resources */,
+				FEB89B80BC034CAF91969A1A /* MessinaSans-Light.otf in Resources */,
+				CE6FE94626FA4AFCA2A89967 /* MessinaSans-LightItalic.otf in Resources */,
+				E6F99AC320A04CC2A2CD70FA /* MessinaSans-Regular.otf in Resources */,
+				84AD04C1E9DD46DD93DA0315 /* MessinaSans-RegularItalic.otf in Resources */,
+				12F03DCBF4014D3F897BB49B /* MessinaSans-SemiBold.otf in Resources */,
+				8BF9AECA10134C7497291E9B /* MessinaSans-SemiBoldItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

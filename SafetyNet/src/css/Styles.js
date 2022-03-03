@@ -32,7 +32,7 @@ export const findStyle = (style, property, defaultvalue) => {
 
 export const addStyle = (style, property, value) => {
   if (style) {
-    let newStyle = {};
+    const newStyle = {};
     newStyle[property] = value;
   }
 
@@ -59,6 +59,7 @@ export const colors = {
   grey200: '#9baad4',
   grey100: '#b2c2f1',
   white: '#ffffff',
+  black: '#000000',
 };
 
 const styles = StyleSheet.create({
@@ -73,11 +74,11 @@ const styles = StyleSheet.create({
   ...fontStyles,
   ...borderStyles,
 
-  flex: {
+  'flex': {
     flex: 1,
   },
-  border: {
-    borderColor: 'white',
+  'border': {
+    borderColor: 'black',
     borderWidth: 1,
   },
   'flex-direction-row': {
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
-  modal: {
+  'modal': {
     width: '85%',
     height: '23%',
     backgroundColor: 'white',
@@ -292,12 +293,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   'square-80p': {
-    width: hasHomeButton()
-      ? Dimensions.get('window').width * 0.65
-      : Dimensions.get('window').width * 0.8,
-    height: hasHomeButton()
-      ? Dimensions.get('window').width * 0.65
-      : Dimensions.get('window').width * 0.8,
+    width: hasHomeButton() ?
+      Dimensions.get('window').width * 0.65 :
+      Dimensions.get('window').width * 0.8,
+    height: hasHomeButton() ?
+      Dimensions.get('window').width * 0.65 :
+      Dimensions.get('window').width * 0.8,
   },
   'event-card': {
     width: Dimensions.get('window').width * 0.9,

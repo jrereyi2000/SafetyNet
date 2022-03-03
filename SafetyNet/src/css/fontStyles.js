@@ -791,7 +791,7 @@ export const fontStyles = {
   'font-style-normal': {
     fontStyle: 'normal',
   },
-  underline: {
+  'underline': {
     textDecorationLine: 'underline',
   },
 };
