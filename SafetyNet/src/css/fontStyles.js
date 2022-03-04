@@ -743,6 +743,12 @@ export const fontStyles = {
   'messina-sans-black': {
     fontFamily: 'MessinaSans-Black',
   },
+  'messina-sans-semibold': {
+    fontFamily: 'MessinaSans-SemiBold',
+  },
+  'messina-sans-light': {
+    fontFamily: 'MessinaSans-Light',
+  },
   'text-align-center': {
     textAlign: 'center',
   },

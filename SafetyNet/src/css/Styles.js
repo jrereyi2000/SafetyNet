@@ -77,6 +77,10 @@ const styles = StyleSheet.create({
   'flex': {
     flex: 1,
   },
+  'center': {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   'border': {
     borderColor: 'black',
     borderWidth: 1,
@@ -143,12 +147,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
   'modal': {
-    width: '85%',
-    height: '23%',
+    width: '100%',
+    height: '95%',
     backgroundColor: 'white',
     borderRadius: 20,
     alignItems: 'center',

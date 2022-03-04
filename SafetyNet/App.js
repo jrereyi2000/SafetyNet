@@ -271,7 +271,7 @@ const RequestScreen = ({navigation}) => {
           tabBarLabelStyle: getStyle('font-size-16 messina-sans-regular', {textTransform: 'capitalize'}),
           tabBarItemStyle: getStyle('align-items-flex-start margin-left-15 margin-right-15'),
           tabBarIndicatorContainerStyle: getStyle('width-100p height-4 margin-top-36', {backgroundColor: '#6797F7'}),
-          tabBarIndicatorStyle: getStyle('width-38p margin-left-28 tangerine height-4', {backgroundColor: '#1426CA'}),
+          tabBarIndicatorStyle: getStyle('width-40p margin-left-28 tangerine height-4', {backgroundColor: '#1426CA'}),
         }}
         initialRouteName="Sent">
         <Request.Screen name="Sent" component={SentRequestsScreen} />
@@ -314,7 +314,7 @@ const ProtectedScreen = () => {
           tabBarIcon: ({focused}) => (
             <TabView
               focused={focused}
-              focusedIcon={require('./res/images/networkIcon.png')}
+              focusedIcon={require('./res/images/networkIconActive.png')}
               notFocusedIcon={require('./res/images/networkIcon.png')}
               text="Network"
             />
@@ -329,7 +329,7 @@ const ProtectedScreen = () => {
             <TabView
               focused={focused}
               focusedIcon={require('./res/images/requestIconActive.png')}
-              notFocusedIcon={require('./res/images/requestIconActive.png')}
+              notFocusedIcon={require('./res/images/requestIcon.png')}
               text="Requests"
             />
           ),
@@ -342,7 +342,7 @@ const ProtectedScreen = () => {
           tabBarIcon: ({focused}) => (
             <TabView
               focused={focused}
-              focusedIcon={require('./res/images/profileIcon.png')}
+              focusedIcon={require('./res/images/profileIconActive.png')}
               notFocusedIcon={require('./res/images/profileIcon.png')}
               text="Profile"
             />
