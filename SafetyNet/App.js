@@ -5,23 +5,23 @@
  * @format
  * @flow strict-local
  */
-import React, {useState, useContext} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import React, { useState, useContext } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import TabView from './src/components/Protected/TabView';
 import AppContext from './src/AppContext';
 //  import Geolocation from '@react-native-community/geolocation';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {colors, getStyle} from './src/css/Styles';
-import {StatusBar, View, Text, Dimensions, Pressable, Image} from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { colors, getStyle } from './src/css/Styles';
+import { StatusBar, View, Text, Dimensions, Pressable, Image } from 'react-native';
 import * as Keychain from 'react-native-keychain';
-import {MMKV} from 'react-native-mmkv';
+import { MMKV } from 'react-native-mmkv';
 //  import Settings from './src/components/Settings';
 import * as splashScreen from 'react-native-splash-screen';
 //  import Amplify from 'aws-amplify';
 //  import PushNotification from '@aws-amplify/pushnotification';
 //  import awsconfig from './aws-exports';
-import {hasHomeButton} from './src/utils';
+import { hasHomeButton } from './src/utils';
 import {
   HomeScreen,
   NetworkScreen,
@@ -63,7 +63,6 @@ const App = () => {
   const [token, set_token] = useState(false);
   const [aws, set_aws] = useState('');
   const [loc, set_loc] = useState({});
-  const [active_method, set_active_method] = useState(undefined);
   const [displayIntro, set_display] = useState(false);
 
   const toggle_launch = () => MMKV.set('HAS_LAUNCHED', 'true');
@@ -79,7 +78,6 @@ const App = () => {
     set_token(false);
     set_user({});
     set_loc({});
-    set_active_method(undefined);
   };
 
   // PushNotification.onRegister((aws_token) => {
@@ -87,7 +85,7 @@ const App = () => {
   // });
 
   const set_field = (updates) => {
-    const newUser = {...user};
+    const newUser = { ...user };
     for (const update of updates) {
       if (update.field.includes('profile.')) {
         const newField = update.field.substr(8);
@@ -116,7 +114,6 @@ const App = () => {
     user,
     aws,
     loc,
-    active_method,
     displayIntro,
     set_mobile_num,
     set_name,
@@ -132,7 +129,6 @@ const App = () => {
     set_field,
     set_aws,
     set_loc,
-    set_active_method,
     toggle_launch,
   };
 
@@ -150,7 +146,6 @@ const App = () => {
       if (async_state) {
         const session = JSON.parse(async_state.password);
         set_user(session);
-        set_active_method(session.default_payment_method);
         set_token(true);
       }
       // After restoring token, we may need to validate it in production apps
@@ -165,46 +160,41 @@ const App = () => {
     if (token) {
       Keychain.setGenericPassword(
           'session',
-          JSON.stringify({...user, token: token}),
+          JSON.stringify({ ...user, token: token }),
       );
     }
   }, [user]);
 
-  //  React.useEffect(() => {
-  //    if (user.default_payment_method !== active_method) {
-  //      set_active_method(user.default_payment_method);
-  //    }
-  //  }, [user.default_payment_method]);
 
   const firstLaunch = checkIfFirstLaunch();
   return (
     <AppContext.Provider value={state}>
       <StatusBar backgroundColor="blue" barStyle="light-content" />
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           {state.loading ? (
              <Stack.Screen
                name="Splash"
                component={SplashScreen}
-               options={{animationEnabled: false}}
+               options={{ animationEnabled: false }}
              />
            ) : state.token ? (
              <>
                <Stack.Screen
                  name="Protected"
                  component={ProtectedScreen}
-                 options={{animationEnabled: false}}
+                 options={{ animationEnabled: false }}
                />
                <Stack.Screen
                  name="Home"
-                 options={{gestureEnabled: false}}
+                 options={{ gestureEnabled: false }}
                  component={HomeScreen}
                />
                {firstLaunch && (
                  <Stack.Screen
                    name="Welcome"
                    component={WelcomeScreen}
-                   options={{animationEnabled: false, gestureEnabled: false}}
+                   options={{ animationEnabled: false, gestureEnabled: false }}
                  />
                )}
              </>
@@ -214,7 +204,7 @@ const App = () => {
                  <Stack.Screen
                    name="Welcome"
                    component={WelcomeScreen}
-                   options={{animationEnabled: false, gestureEnabled: false}}
+                   options={{ animationEnabled: false, gestureEnabled: false }}
                  />
                )}
                {/* Move below Home when Login flow designed */}
@@ -222,7 +212,7 @@ const App = () => {
                <Stack.Screen
                  name="Home"
                  component={HomeScreen}
-                 options={{animationEnabled: firstLaunch, gestureEnabled: false}}
+                 options={{ animationEnabled: firstLaunch, gestureEnabled: false }}
                />
              </>
            )}
@@ -232,20 +222,14 @@ const App = () => {
   );
 };
 
-const RequestScreen = ({navigation}) => {
+const RequestScreen = ({ navigation }) => {
   // const appState = useContext(AppContext);
-  const [modal, setModal] = useState(false);
 
   return (
     <View
       style={getStyle('height-100p width-100p white', {
         paddingTop: hasHomeButton() ? '4%' : 0,
       })}>
-      {/* <Settings
-        show={modal}
-        hideModal={() => setModal(false)}
-        navigation={navigation}
-      /> */}
       <View
         style={getStyle('margin-top-26p flex-direction-row justify-content-space-between width-100p', {
           marginTop: hasHomeButton() ? '7%' : '20%',
@@ -255,7 +239,7 @@ const RequestScreen = ({navigation}) => {
         </Text>
         <Pressable
           style={getStyle('padding-right-6p justify-content-center align-items-flex-end')}
-          onPress={() => setModal(true)}>
+          onPress={() => {}}>
           <Image
             source={require('./res/images/helpIcon.png')}
             resizeMethod="resize"
@@ -268,10 +252,10 @@ const RequestScreen = ({navigation}) => {
           tabBarStyle: getStyle('height-40'),
           tabBarActiveTintColor: colors.black,
           tabBarInactiveTintColor: '#999999',
-          tabBarLabelStyle: getStyle('font-size-16 messina-sans-regular', {textTransform: 'capitalize'}),
+          tabBarLabelStyle: getStyle('font-size-16 messina-sans-regular', { textTransform: 'capitalize' }),
           tabBarItemStyle: getStyle('align-items-flex-start margin-left-15 margin-right-15'),
-          tabBarIndicatorContainerStyle: getStyle('width-100p height-4 margin-top-36', {backgroundColor: '#6797F7'}),
-          tabBarIndicatorStyle: getStyle('width-40p margin-left-28 tangerine height-4', {backgroundColor: '#1426CA'}),
+          tabBarIndicatorContainerStyle: getStyle('width-100p height-4 margin-top-36', { backgroundColor: '#6797F7' }),
+          tabBarIndicatorStyle: getStyle('width-40p margin-left-28 tangerine height-4', { backgroundColor: '#1426CA' }),
         }}
         initialRouteName="Sent">
         <Request.Screen name="Sent" component={SentRequestsScreen} />
@@ -281,23 +265,10 @@ const RequestScreen = ({navigation}) => {
   );
 };
 
-//  const CreateRequestScreen = () => {
-//    return (
-//      <Payment.Navigator
-//        screenOptions={{headerShown: false}}
-//        initialRouteName="Wallet">
-//        <Payment.Screen name="Create" component={RequestScreen} />
-//        <Payment.Screen name="Payment Methods" component={PaymentMethodsScreen} />
-//        <Payment.Screen name="Add Method" component={AddMethodScreen} />
-//        <Payment.Screen name="Edit Method" component={EditMethodScreen} />
-//      </Payment.Navigator>
-//    );
-//  };
-
 const ProtectedScreen = () => {
   return (
     <Tab.Navigator
-      initialLayout={{width: Dimensions.get('window').width}}
+      initialLayout={{ width: Dimensions.get('window').width }}
       screenOptions={{
         tabBarActiveTintColor: 'white',
         tabBarShowLabel: false,
@@ -311,7 +282,7 @@ const ProtectedScreen = () => {
         name="Network"
         component={NetworkScreen}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <TabView
               focused={focused}
               focusedIcon={require('./res/images/networkIconActive.png')}
@@ -325,7 +296,7 @@ const ProtectedScreen = () => {
         name="Requests"
         component={RequestScreen}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <TabView
               focused={focused}
               focusedIcon={require('./res/images/requestIconActive.png')}
@@ -339,7 +310,7 @@ const ProtectedScreen = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <TabView
               focused={focused}
               focusedIcon={require('./res/images/profileIconActive.png')}

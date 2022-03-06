@@ -1,9 +1,9 @@
 // import Config from 'react-native-config';
 // import axios from 'axios';
-import {Dimensions, Alert} from 'react-native';
+import { Dimensions } from 'react-native';
 
 export const reducer = (state, action) => {
-  const newState = {...state};
+  const newState = { ...state };
   newState[action.type] = action.payload;
   return newState;
 };
@@ -37,23 +37,62 @@ export const hasHomeButton = () => {
 //   );
 // };
 
-// export const getMonth = (monthIdx) => {
-//   return [
-//     'Jan',
-//     'Feb',
-//     'Mar',
-//     'Apr',
-//     'May',
-//     'Jun',
-//     'Jul',
-//     'Aug',
-//     'Sep',
-//     'Oct',
-//     'Nov',
-//     'Dec',
-//   ][monthIdx];
-// };
+export const getWeek = (date) => {
+  const curr = date ?? new Date();
+  const week = [];
 
+  for (let i = 1; i <= 7; i++) {
+    const first = curr.getDate() - (curr.getDay() === 0 ? 7 : curr.getDay()) + i;
+    const day = new Date(curr.setDate(first));
+    week.push(day);
+  }
+  week[0].setHours(0, 0, 0, 0);
+  week[week.length-1].setHours(23, 59, 59, 999);
+  return week;
+};
+
+export const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+export const sameDay = (day1, day2) => {
+  const date1 = typeof day1 === 'string' ? new Date(day1) : day1;
+  const date2 = typeof day2 === 'string' ? new Date(day2) : day2;
+  if (Object.prototype.toString.call(date1) !== '[object Date]') return false;
+  if (Object.prototype.toString.call(date2) !== '[object Date]') return false;
+
+  return date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate();
+};
+
+export const getMonth = (monthIdx) => {
+  return [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ][monthIdx];
+};
+
+
+export const closestHalfHour = (date) =>
+  new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      date.getHours(),
+      (Math.floor(date.getMinutes() / 30) + 1) * 30,
+  );
+
+
+export const formatDate = (date) => `${getMonth(date.getMonth())} ${date.getDate()}`;
+export const formatTime = (time) =>
+  time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 // export const removeNonNumber = (string = '') => string.replace(/[^\d]/g, '');
 // export const removeLeadingSpaces = (string = '') => string.replace(/^\s+/g, '');
 // export const limitLength = (string = '', maxLength) =>
@@ -259,7 +298,7 @@ export const hasHomeButton = () => {
 // };
 
 export const isProfileIncomplete = (user) => {
-  const {preferences = {}, profile = {}} = user;
+  const { preferences = {}, profile = {} } = user;
   const profileValues = Object.keys(preferences)
       .map((k) => preferences[k])
       .concat(Object.keys(profile).map((k) => profile[k]));

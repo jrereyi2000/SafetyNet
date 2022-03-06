@@ -749,6 +749,9 @@ export const fontStyles = {
   'messina-sans-light': {
     fontFamily: 'MessinaSans-Light',
   },
+  'messina-sans-book': {
+    fontFamily: 'MessinaSans-Book',
+  },
   'text-align-center': {
     textAlign: 'center',
   },

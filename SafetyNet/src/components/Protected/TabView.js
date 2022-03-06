@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
-import {getStyle} from '../../css/Styles';
+import { View, Image, Text } from 'react-native';
+import { getStyle } from '../../css/Styles';
 
-const TabView = ({focused, focusedIcon, notFocusedIcon, text}) => {
+const TabView = ({ focused, focusedIcon, notFocusedIcon, text }) => {
   return (
     <View
       style={getStyle(

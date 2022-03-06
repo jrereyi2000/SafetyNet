@@ -32,7 +32,7 @@ export const positioningStyles = {
   'justify-content-space-evenly': {
     justifyContent: 'space-evenly',
   },
-  absolute: {
+  'absolute': {
     position: 'absolute',
   },
   'flex-1': {

@@ -33,6 +33,9 @@ const textColorStyles = {
   'text-disabled-grey': {
     color: '#9899A3',
   },
+  'text-salmon': {
+    color: '#ea7c79',
+  },
 };
 
 const customTextColorStyles = {
@@ -200,6 +203,15 @@ const customBackgroundColorStyles = {
   },
   white: {
     backgroundColor: '#ffffff',
+  },
+  deepSupport: {
+    backgroundColor: '#4380FA',
+  },
+  salmon: {
+    backgroundColor: '#ea7c79',
+  },
+  melon: {
+    backgroundColor: '#f4ada6',
   },
 };
 

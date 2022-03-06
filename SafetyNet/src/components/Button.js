@@ -1,4 +1,4 @@
-import React, {useReducer, useEffect, useRef} from 'react';
+import React, { useReducer, useEffect, useRef } from 'react';
 import {
   Text,
   Pressable,
@@ -6,16 +6,28 @@ import {
   ActivityIndicator,
   Animated,
 } from 'react-native';
-import {getStyle} from '../css/Styles';
-import {useFocusEffect} from '@react-navigation/native';
-import {reducer} from '../utils';
+import { getStyle } from '../css/Styles';
+import { useFocusEffect } from '@react-navigation/native';
+import { reducer } from '../utils';
 
 const getImageUrl = (filename) => {
   switch (filename) {
     case 'newRequestIcon.png':
       return require('../../res/images/newRequestIcon.png');
+    case 'newRequestIconBlack.png':
+      return require('../../res/images/newRequestIconBlack.png');
     case 'sendRequestIcon.png':
       return require('../../res/images/sendRequestIcon.png');
+    case 'dropdownWhite.png':
+      return require('../../res/images/dropdownWhite.png');
+    case 'add.png':
+      return require('../../res/images/add.png');
+    case 'addDeepSupport.png':
+      return require('../../res/images/addDeepSupport.png');
+    case 'boost.png':
+      return require('../../res/images/boost.png');
+    case 'chatIcon.png':
+      return require('../../res/images/chatIcon.png');
     default:
       return;
   }
@@ -39,6 +51,7 @@ const Button = ({
   padding,
   centerIcon,
   alwaysShowIcon,
+  useIconStyle,
   onPress = () => {},
 }) => {
   const [state, dispatch] = useReducer(reducer, {
@@ -70,7 +83,7 @@ const Button = ({
   }, [state.click]);
 
   useFocusEffect(() => {
-    state.loading && dispatch({type: 'loading', payload: false});
+    state.loading && dispatch({ type: 'loading', payload: false });
   });
 
   let outerStyle = buttonStyle;
@@ -96,13 +109,13 @@ const Button = ({
         }),
       ]}
       onPressIn={() => {
-        dispatch({type: 'click', payload: true});
+        dispatch({ type: 'click', payload: true });
       }}
       onPress={async () => {
-        dispatch({type: 'click', payload: false});
-        dispatch({type: 'loading', payload: true});
+        dispatch({ type: 'click', payload: false });
+        dispatch({ type: 'loading', payload: true });
         await onPress();
-        mounted && dispatch({type: 'loading', payload: false});
+        mounted && dispatch({ type: 'loading', payload: false });
       }}
       disabled={disabled}>
       {state.loading ? (
@@ -125,11 +138,11 @@ const Button = ({
               source={getImageUrl(disabled ? '' : icon)}
             />
           ) : (
-            <Text style={tStyle}>{text}</Text>
+            <Text numberOfLines={1} style={tStyle}>{text}</Text>
           )}
           {(alwaysShowIcon || !disabled) && type !== 'icon' && endIcon && (
             <Image
-              style={centerIcon ? iconStyle : getStyle('width-20 height-20')}
+              style={centerIcon || useIconStyle ? iconStyle : getStyle('width-20 height-20')}
               resizeMethod="resize"
               resizeMode='contain'
               source={getImageUrl(endIcon)}

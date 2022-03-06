@@ -1,13 +1,13 @@
-import {StyleSheet, Dimensions} from 'react-native';
-import {heightStyles, heightPStyles} from './heightStyles';
-import {widthStyles, widthPStyles} from './widthStyles';
-import {positioningStyles} from './positioningStyles';
-import {paddingStyles} from './paddingStyles';
-import {marginStyles} from './marginStyles';
-import {colorStyles} from './colorStyles';
-import {fontStyles} from './fontStyles';
-import {borderStyles} from './borderStyles';
-import {hasHomeButton} from '../utils';
+import { StyleSheet, Dimensions } from 'react-native';
+import { heightStyles, heightPStyles } from './heightStyles';
+import { widthStyles, widthPStyles } from './widthStyles';
+import { positioningStyles } from './positioningStyles';
+import { paddingStyles } from './paddingStyles';
+import { marginStyles } from './marginStyles';
+import { colorStyles } from './colorStyles';
+import { fontStyles } from './fontStyles';
+import { borderStyles } from './borderStyles';
+import { hasHomeButton } from '../utils';
 
 export const getStyle = (styleStr, extraStyles = {}) => {
   const allStyles = styleStr.split(' ');
@@ -60,6 +60,11 @@ export const colors = {
   grey100: '#b2c2f1',
   white: '#ffffff',
   black: '#000000',
+  deepSupport: '#4380fa',
+  sky: '#c1e5fc',
+  salmon: '#ea7c79',
+  cocoa: '#7b6d6c',
+  melon: '#f4ada6',
 };
 
 const styles = StyleSheet.create({
@@ -76,6 +81,9 @@ const styles = StyleSheet.create({
 
   'flex': {
     flex: 1,
+  },
+  'display-none': {
+    display: 'none',
   },
   'center': {
     alignItems: 'center',

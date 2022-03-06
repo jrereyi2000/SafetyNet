@@ -2,6 +2,8 @@ module.exports = {
   'env': {
     'browser': true,
     'es2021': true,
+    'amd': true,
+    'node': true,
   },
   'extends': [
     'plugin:react/recommended',
@@ -21,5 +23,7 @@ module.exports = {
     'max-len': 'off',
     'camelcase': 'off',
     'react/prop-types': 'off',
+    'object-curly-spacing': ['error', 'always'],
+    'no-undef': ['error'],
   },
 };

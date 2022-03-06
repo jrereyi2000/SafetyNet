@@ -14,6 +14,9 @@ const borderColorStyles = {
   'border-color-tangerine': {
     borderColor: '#FF8264',
   },
+  'border-color-deepSupport': {
+    borderColor: '#4380FA',
+  },
   'border-bottom-color-grey': {
     borderBottomColor: '#DADADA',
   },
