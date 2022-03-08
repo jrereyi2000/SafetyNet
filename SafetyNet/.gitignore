@@ -1,6 +1,8 @@
 # OSX
 #
 .DS_Store
+server/.DS_Store
+client/.DS_Store
 
 # Xcode
 #
@@ -32,9 +34,12 @@ local.properties
 
 # node.js
 #
-node_modules/
-npm-debug.log
-yarn-error.log
+server/node_modules/
+server/npm-debug.log
+server/yarn-error.log
+client/node_modules/
+client/npm-debug.log
+client/yarn-error.log
 
 # BUCK
 buck-out/
@@ -57,4 +62,4 @@ buck-out/
 *.jsbundle
 
 # CocoaPods
-/ios/Pods/
+client/ios/Pods/
